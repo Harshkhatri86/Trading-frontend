@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root{
-  --display-color : #03AED2
+  --display-color : #03AED2 ; 
+  --border-color : #E2DFD0 ; 
 }
 
 body {
