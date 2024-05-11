@@ -1,13 +1,15 @@
 import React from 'react';
 import LoginPageImage from '../../assets/Trade-Login.png'
 import Input from '../../component/Input/Input';
+import Button from '../../component/Button/Button';
 
 function Login() {
     const [password, setPassword] = React.useState<string>("")
     const passwordError = "";
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent | React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        console.log("handleSubmit")
     }
     return <div className='flex flex-row'>
         <img src={LoginPageImage} alt="" className='h-screen w-6/12' />
@@ -26,6 +28,7 @@ function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     error={passwordError}
                 />
+                <Button title="Sign In" isPrimary={true} onClick={(e : React.MouseEvent<HTMLButtonElement>) => handleSubmit(e)}/>
             </form>
         </div>
     </div>

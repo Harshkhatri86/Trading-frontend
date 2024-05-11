@@ -1,0 +1,9 @@
+.Primary{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+}
+
+.Focused{
+    box-shadow: 0 0 10px 0px var(--shadow-color);
+}
