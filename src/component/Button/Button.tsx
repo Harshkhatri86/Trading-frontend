@@ -10,7 +10,7 @@ interface ButtonProps {
 function Button({ title, isPrimary, onClick }: ButtonProps) {
 
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
-    const [focus, setFocus] = React.useState<boolean>()
+    const [focus, setFocus] = React.useState<boolean>(false)
 
     React.useEffect(() => {
         if ((isPrimary || focus) && buttonRef.current) {
@@ -24,11 +24,11 @@ function Button({ title, isPrimary, onClick }: ButtonProps) {
         onClick(e);
     }
 
-    return <div>
-        <button ref={buttonRef} onMouseEnter={() => setFocus(true)}
+    return <div className="w-full">
+        <button ref={buttonRef} 
+            onMouseEnter={() => setFocus(true)}
             onMouseLeave={() => setFocus(false)}
-            className={`w-full border text-center h-12 rounded ${isPrimary ? "Primary" : "Secondary"} ${focus ? "Focused" : ""}`}
-            style={{ backgroundColor: isPrimary ? "#114388" : "" }}
+            className={`w-full text-center h-10 rounded ${isPrimary ? "Primary" : "Secondary"} ${focus ? "Focused" : ""}`}
             onClick={handleClick}
             type={isPrimary ? "submit" : "button"}
         >

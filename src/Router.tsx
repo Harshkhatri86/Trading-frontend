@@ -1,6 +1,6 @@
 import {createBrowserRouter } from 'react-router-dom' ; 
 import App from './App';
-import Login from './page/Login/Login';
+import LoginIndex from './page/Login/Index';
 
 export const router = createBrowserRouter([
     {
@@ -11,6 +11,6 @@ export const router = createBrowserRouter([
         ]
     }, {
         path: '/login', 
-        element : <Login/>
+        element : <LoginIndex/>
     }
 ]) 
