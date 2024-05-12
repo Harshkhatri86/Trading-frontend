@@ -3,3 +3,7 @@
     border-color: var(--border-color);
     border-radius: 5px;
 }
+.InputBox:focus{
+    outline: var(--border-color);
+    border-color: var(--border-color) ;
+}

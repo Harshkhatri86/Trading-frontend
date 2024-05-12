@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/componentCSS/Input.css'
+import './Input.css'
 
 interface InputProps {
     type: string;
@@ -10,10 +10,11 @@ interface InputProps {
     autoFocus?: boolean;
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
+    name: string ; 
 }
 
 
-const Input = ({ type, placeholder, value, onChange, error, autoFocus, startIcon, endIcon }: InputProps) => {
+const Input = ({ name ,type, placeholder, value, onChange, error, autoFocus, startIcon, endIcon }: InputProps) => {
 
     const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -26,17 +27,19 @@ const Input = ({ type, placeholder, value, onChange, error, autoFocus, startIcon
     return <div>
         <div >
             {startIcon && <div className="icon start-icon">{startIcon}</div>}
+            <label htmlFor="">{placeholder} <span>*</span></label>
             <input
                 type={type}
+                name={name}
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
                 style={{ borderColor: error ? 'red' : ''}}
                 ref={inputRef}
-                className='w-full h-15 p-3 InputBox'
+                className='w-full h-10 p-3 InputBox'
             />
             {endIcon && <div className="icon end-icon">{endIcon}</div>}
-            {error && <span className="error-message">{error}</span>}
+            {error && <span className="text-red-500">{error}</span>}
         </div>
     </div>
 }
